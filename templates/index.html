@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- <h1>Driving School</h1> -->
+    <!-- create button on clicking should take to add student route to allow enter student details -->
+    <a href="/add_student" class="btn btn-primary">Add Student</a>
+    <!-- iterate over student_list template variable ,
+         display student details, along with delete button , 
+         which will take to delete student route-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in student_list %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.mobile_number }}</td>
+                    <td>
+                        <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+{% endblock %}
+    

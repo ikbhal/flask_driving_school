@@ -1,0 +1,26 @@
+# Python
+*.pyc
+__pycache__/
+
+# IDEs
+.vscode/
+.idea/
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.out
+
+# Dependency directories
+venv/
+node_modules/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# OS generated files
+.DS_Store
+Thumbs.db

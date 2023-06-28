@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+Add Student
+{% endblock %}
+
+{% block content %}
+<h1>Add student</h1>
+<!-- form for add student  -->
+<!-- rewrite form with bootstrap-->
+<form action="/add_student" method="POST">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+    </div>
+    <div class="form-group">
+        <label for="mobile_number">Mobile Number:</label>
+        <input type="text" name="mobile_number">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+{% endblock %}

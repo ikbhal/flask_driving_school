@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <header>
+        <!-- Add your header content here -->
+        <!-- create homoe button , which will always take to home page / route -->
+        <!-- make it float clear for this home button , so that h1 driving shcool come after this home -->
+
+        <a href="/" class="btn btn-primary home-button">Home</a>
+        <!-- make this driving school as brand name , make it bold, big enough next to home page-->
+
+        <div class="brand-name">Driving School</div>
+
+        <hr/>
+    </header>
+    
+    <nav>
+        <!-- Add your navigation menu here -->
+    </nav>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Add your footer content here -->
+    </footer>
+</body>
+</html>

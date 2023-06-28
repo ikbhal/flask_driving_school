@@ -1,0 +1,19 @@
+/*
+create css code  
+to give marging to left and right side of the page
+
+*/
+body {
+    margin: 0 10%;
+}
+
+.home-button{
+    float: right;
+}
+
+.brand-name {
+    font-weight: 200;
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    float:left;
+}
