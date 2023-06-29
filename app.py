@@ -1,8 +1,9 @@
 from flask import Flask, render_template
-from routes.student_routes import students_bp
 from flask_pymongo import PyMongo
-# from routes.appointment_routes import appointment_bp
-
+# from routes.class_routes import class_bp
+from routes.student_routes import students_bp
+from routes.appointment_routes import appointment_bp
+from routes.class_routes import class_bp
 
 app = Flask(__name__)
 app.secret_key = 'allah raji hojaye'
@@ -12,6 +13,8 @@ student_collection = mongo_client.db.students
 
 app.register_blueprint(students_bp)
 # app.register_blueprint(appointment_bp)
+app.register_blueprint(class_bp)
+
 
 @app.route('/')
 def index():

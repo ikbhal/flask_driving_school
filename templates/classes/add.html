@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Add Class
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Class</h1>
+    <form action="/add_class/{{student_mobile_number}}" method="POST">
+        <div class="form-group">
+            <label>Student Mobile Number: {{student_mobile_number}}</label>
+            <!-- <input type="text" name="mobile_number" id="mobile_number" class="form-control" required> -->
+        </div>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="start_time">Start Time:</label>
+            <input type="time" name="start_time" id="start_time" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="end_time">End Time:</label>
+            <input type="time" name="end_time" id="end_time" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Class</button>
+    </form>
+</div>
+{% endblock %}

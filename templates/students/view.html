@@ -5,6 +5,20 @@
         <!-- <h1>View Student</h1> -->
         <div class="mt-4">
             <h4>Student Details</h4>
+            <p>
+                <a href="/students/edit/{{ student._id }}" class="btn btn-danger">Edit</a>
+           
+                <a href="/students/delete/{{ student._id }}" class="btn btn-danger">Delete</a>
+            </p>
+            <hr/>
+            <h5>Student classes</h5>
+            <!-- create button called add class which should call /add_class -->
+            <a href="/add_class/{{ student.mobile_number }}" class="btn btn-primary">Add Class</a>
+            <!-- create button called list clases which will take to list_clases/ student mobile nubmer route-->
+            <a href="{{url_for('class.list_classes', student_mobile_number= student.mobile_number)}}" 
+                class="btn btn-primary">List Classes
+            </a>
+            <hr/>
             <p>Name: {{ student.name }}</p>
             <p>Mobile Number: {{ student.mobile_number }}</p>
             <p>Joining Date: {{ student.joining_date }}</p>
@@ -17,11 +31,6 @@
             <p>Training Days: {{ student.training_days }}</p>
             <p>Notes: {{ student.notes }}</p>
 
-            <p>
-                <a href="/students/edit/{{ student._id }}" class="btn btn-danger">Edit</a>
-           
-                <a href="/students/delete/{{ student._id }}" class="btn btn-danger">Delete</a>
-            </p>
         </div>
     </div>
 {% endblock %}
