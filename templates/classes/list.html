@@ -8,7 +8,10 @@ Class List
     <h4>Class List</h4>
     <h5>Student  Name: {{student.name}}</h5>
     <p>Mobile Number: {{ student.mobile_number }}</p>
-    <a href="/view/{{ student._id }}" class="btn btn-danger">View Student</a>
+    <a href="{{url_for("students.view_student", student_id= student['_id'])}}"
+        class="btn btn-danger">
+        View Student
+    </a>
     
     <table class="table table-striped">
         <thead>
