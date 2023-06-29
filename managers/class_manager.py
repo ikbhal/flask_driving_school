@@ -13,7 +13,10 @@ class ClassManager:
             'end_time': end_time
         }
         self.mongo_client.db.classes.insert_one(class_doc)
-
+        
+    # class_manager.delete_class(class_id)
+    def delete_class(self, class_id):
+        self.mongo_client.db.classes.delete_one({'_id': ObjectId(class_id)})
 
     def list_clasess(self, student_mobile_number):
         classes = self.mongo_client.db.classes.find({'student_mobile_number': student_mobile_number})

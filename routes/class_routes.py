@@ -39,7 +39,12 @@ def list_classes(student_mobile_number):
                            student_mobile_number=student_mobile_number
                            )
 
-# @class_bp.route('/delete_class')
-# def delete_class():
-#     return "delete class"
+@class_bp.route('/students/<student_mobile_number>/delete_class/<class_id>')
+def delete_class(student_mobile_number, class_id):
+    from app import mongo_client
+    from managers.class_manager import ClassManager
+    class_manager = ClassManager(mongo_client)
+    class_manager.delete_class(class_id)
+    flash('Class deleted successfully.')
+    return redirect(url_for('class.list_classes',student_mobile_number=student_mobile_number))
 
