@@ -105,21 +105,31 @@ def edit_student(student_id):
         notes = request.form['notes']
 
         # update in student object
-        student.name = name
-        student.mobile_number = mobile_number
-        student.joining_date = joining_date
-        student.application_number = application_number
-        student.amount = amount
-        student.discount = discount
-        student.amount_paid = amount_paid
-        student.settle_amount = settle_amount
-        student.course = course
-        student.training_days = training_days
-        student.notes = notes
+        myquery = { "_id": ObjectId(student_id) }
+        newvalues = { "$set": 
+            {
+                'name': name,
+                'mobile_number': mobile_number,
+                'joining_date': joining_date,
+                'application_number': application_number,
+                'amount': amount,
+                'discount': discount,
+                'amount_paid': amount_paid,
+                'settle_amount': settle_amount,
+                'course': course,
+                'training_days': training_days,
+                'notes': notes
+            }
+        }
+
+        student_collection.update_one(myquery, newvalues)
 
         # save studenet back to db
-        student_collection.save(student)
+        # student_collection.save(student)
         flash('Student Updated Successfully')
+
+        # go back to view page student id
+        return redirect(url_for('view_student', student_id=student_id))
 
     else:
         student = student_collection.find_one({'_id': ObjectId(student_id)})
