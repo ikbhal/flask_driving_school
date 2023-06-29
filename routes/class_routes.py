@@ -39,7 +39,8 @@ def list_classes(student_id):
     classes = class_manager.list_clasess(student_id)
     #get student 
     from managers.student_manager import StudentManager
-    student = StudentManager.get_student_by_id(student_id)
+    studenet_manager = StudentManager(mongo_client=mongo_client)
+    student = studenet_manager.get_student_by_id(student_id)
     return render_template('classes/list.html', 
                            classes=classes,
                            student=student
