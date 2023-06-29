@@ -4,27 +4,27 @@
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
 </head>
 <body>
     <header>
-        <!-- Add your header content here -->
-        <!-- create homoe button , which will always take to home page / route -->
-        <!-- make it float clear for this home button , so that h1 driving shcool come after this home -->
-
-        <a href="/" class="btn btn-primary home-button">Home</a>
-        <!-- make this driving school as brand name , make it bold, big enough next to home page-->
-
-        <div class="brand-name">Driving School</div>
-
-        <hr/>
+        <!-- <a href="/" class="btn btn-primary home-button">Home</a>
+        <div class="brand-name">DSkool</div> -->
+        <!-- <hr/> -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">DSkool</a>
+                  </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/add_student">Add Student</a></li>
+                    <li><a href="/list_students">List Students</a></li>
+                    <li><a href="/search_student">Search Student</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     
-    <nav>
-        <!-- Add your navigation menu here -->
-    </nav>
+    
     
     <main>
         {% block content %}{% endblock %}

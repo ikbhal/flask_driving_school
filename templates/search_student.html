@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Search Student</h1>
+        <form method="POST" action="/search_student" class="mt-4">
+            <div class="form-group">
+                <label for="mobile_number">Mobile Number:</label>
+                <input type="text" name="mobile_number" id="mobile_number" class="form-control" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        
+        {% if student %}
+            <div class="mt-4">
+                <h2>Student Details</h2>
+                <p>Student ID: {{ student.student_id }}</p>
+                <p>Name: {{ student.name }}</p>
+                <p>Mobile Number: {{ student.mobile_number }}</p>
+            </div>
+        {% else: %}
+            <div class="mt-4">
+                <p>Student not found by mobile number </p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

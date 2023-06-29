@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Mobile Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in student_list %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.mobile_number }}</td>
+                    <td>
+                        <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+{% endblock %}
+    

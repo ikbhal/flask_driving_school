@@ -3,17 +3,27 @@ create css code
 to give marging to left and right side of the page
 
 */
+
+
 body {
     margin: 0 10%;
 }
 
 .home-button{
-    float: right;
+    /* float: right; */
+    margin-right: 10px;
+    float: left;
+    clear: left;
 }
 
 .brand-name {
-    font-weight: 200;
+    /* font-weight: 200;
     font-family: 'Roboto', sans-serif;
     font-size: larger;
-    float:left;
+    float:left; */
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #337ab7;
 }
+

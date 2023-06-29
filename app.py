@@ -36,6 +36,14 @@ def index():
 
     return render_template('index.html', student_list=student_list)
 
+# create route to display list of students
+@app.route('/list_students')
+def list_students():
+    print("inside list students route");
+    student_list = student_collection.find()
+    return render_template('list_students.html', student_list=student_list)
+
+
 # create add student route
 @app.route('/add_student', methods=['POST', 'GET'])
 def add_student():
@@ -68,6 +76,23 @@ def delete_student(student_id):
     # add flash message
     flash('Student Deleted Successfully')
     return redirect(url_for('index'))
+
+# search student by mobile number route
+@app.route('/search_student', methods=['POST', 'GET'])
+def search_student():
+    if request.method == 'POST':
+        mobile_number = request.form['mobile_number']
+        print('mobile_number: ' , mobile_number)
+        # search student by mobile number
+        student = student_collection.find_one({'mobile_number': mobile_number})
+        print('student: ' , student)
+        if student:
+            # if student found
+            return render_template('search_student.html', student=student)
+        
+    else:
+        # return redirect(url_for('index'))
+        return render_template('search_student.html');
 
 if __name__ == '__main__':
     app.run(debug=True)
