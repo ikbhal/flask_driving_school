@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <h1>Search Student</h1>
-        <form method="POST" action="/search_student" class="mt-4">
+        <form method="POST" action="/students/search" class="mt-4">
             <div class="form-group">
                 <label for="mobile_number">Mobile Number:</label>
                 <input type="text" name="mobile_number" id="mobile_number" class="form-control" required>
@@ -30,11 +30,11 @@
                     <p>Training Days: {{student.training_days}}</p>
                     <p>Notes: {{student.notes}}</p> -->
                     <p>
-                        <a href="/view_student/{{ student._id }}" class="btn btn-danger">View</a>
+                        <a href="/students/view/{{ student._id }}" class="btn btn-danger">View</a>
                 
-                        <a href="/edit_student/{{ student._id }}" class="btn btn-danger">Edit</a>
+                        <a href="/students/edit/{{ student._id }}" class="btn btn-danger">Edit</a>
                     
-                        <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
+                        <a href="/students/delete/{{ student._id }}" class="btn btn-danger">Delete</a>
                     </p>
                 </div>
             {% else: %}

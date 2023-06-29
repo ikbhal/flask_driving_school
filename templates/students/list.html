@@ -33,11 +33,11 @@
                     <td>{{ student.training_days }}</td>
                     <td>{{ student.notes }}</td> -->
                     <td>
-                        <a href="/view_student/{{ student._id }}" class="btn btn-danger">View</a>
+                        <a href="/students/view/{{ student._id }}" class="btn btn-danger">View</a>
                     
-                        <a href="/edit_student/{{ student._id }}" class="btn btn-danger">Edit</a>
+                        <a href="/students/edit/{{ student._id }}" class="btn btn-danger">Edit</a>
                     
-                        <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
+                        <a href="/students/delete/{{ student._id }}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
             {% endfor %}

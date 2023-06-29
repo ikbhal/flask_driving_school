@@ -3,7 +3,7 @@
 {% block content %}
     <div class="container">
         <h1>Edit Student</h1>
-        <form method="POST" action="/edit_student/{{ student._id }}" class="mt-4">
+        <form method="POST" action="/students/edit/{{ student._id }}" class="mt-4">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" class="form-control" value="{{ student.name }}" required>
