@@ -148,7 +148,7 @@ def search_student():
         mobile_number = request.form['mobile_number']
         student = student_collection.find_one({'mobile_number': mobile_number})
         if student:
-            return render_template('search_student.html', student=student)
+            return render_template('search_student.html', student=student, mobile_number=mobile_number)
         else:
             flash('Student not found')
     return render_template('search_student.html')

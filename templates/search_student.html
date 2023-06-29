@@ -11,34 +11,38 @@
             
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
+
+        {% if mobile_number %}
         
-        {% if student %}
-            <div class="mt-4">
-                <h2>Student Details</h2>
-                <p>Student ID: {{ student.student_id }}</p>
-                <p>Name: {{ student.name }}</p>
-                <p>Mobile Number: {{ student.mobile_number }}</p>
-                <p>Joining Date: {{ student.joining_date }}</p>
-                <!-- <p>Application Number: {{ student.application_number }}</p>
-                <p>Amount: {{ student.amount }}</p>
-                <p>Discount: {{ student.discount }}</p>
-                <p>Amount Paid: {{ student.amount_paid }}</p>
-                <p>Settle Amount: {{ student.settle_amount }}</p>
-                <p>Course: {{ student.course }}</p>
-                <p>Training Days: {{student.training_days}}</p>
-                <p>Notes: {{student.notes}}</p> -->
-                <p>
-                    <a href="/view_student/{{ student._id }}" class="btn btn-danger">View</a>
-              
-                    <a href="/edit_student/{{ student._id }}" class="btn btn-danger">Edit</a>
+            {% if student %}
+                <div class="mt-4">
+                    <h2>Student Details</h2>
+                    <p>Student ID: {{ student.student_id }}</p>
+                    <p>Name: {{ student.name }}</p>
+                    <p>Mobile Number: {{ student.mobile_number }}</p>
+                    <p>Joining Date: {{ student.joining_date }}</p>
+                    <!-- <p>Application Number: {{ student.application_number }}</p>
+                    <p>Amount: {{ student.amount }}</p>
+                    <p>Discount: {{ student.discount }}</p>
+                    <p>Amount Paid: {{ student.amount_paid }}</p>
+                    <p>Settle Amount: {{ student.settle_amount }}</p>
+                    <p>Course: {{ student.course }}</p>
+                    <p>Training Days: {{student.training_days}}</p>
+                    <p>Notes: {{student.notes}}</p> -->
+                    <p>
+                        <a href="/view_student/{{ student._id }}" class="btn btn-danger">View</a>
                 
-                    <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
-                </p>
-            </div>
-        {% else %}
-            <div class="mt-4">
-                <p>Student not found by mobile number</p>
-            </div>
+                        <a href="/edit_student/{{ student._id }}" class="btn btn-danger">Edit</a>
+                    
+                        <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
+                    </p>
+                </div>
+            {% else: %}
+                <div class="mt-4">
+                    <p>Student not found by mobile number</p>
+                </div>
+            {% endif %}
+            
         {% endif %}
     </div>
 {% endblock %}
