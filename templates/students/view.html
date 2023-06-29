@@ -11,13 +11,19 @@
                 <a href="/students/delete/{{ student._id }}" class="btn btn-danger">Delete</a>
             </p>
             <hr/>
-            <h5>Student classes</h5>
-            <!-- create button called add class which should call /add_class -->
-            <a href="/add_class/{{ student._id }}" class="btn btn-primary">Add Class</a>
-            <!-- create button called list clases which will take to list_clases/ student mobile nubmer route-->
-            <a href="{{url_for('class.list_classes', student_id= student._id)}}" 
-                class="btn btn-primary">List Classes
-            </a>
+            <p> 
+                <a href="{{url_for('photos.upload_photo_form', student_id=student._id)}}"
+                    class="btn btn-danger">Upload Photo</a>
+            </p>
+            <p>
+                <h5>Student classes</h5>
+                <!-- create button called add class which should call /add_class -->
+                <a href="/add_class/{{ student._id }}" class="btn btn-primary">Add Class</a>
+                <!-- create button called list clases which will take to list_clases/ student mobile nubmer route-->
+                <a href="{{url_for('class.list_classes', student_id= student._id)}}" 
+                    class="btn btn-primary">List Classes
+                </a>
+            </p>
             <hr/>
             <p>Name: {{ student.name }}</p>
             <p>Mobile Number: {{ student.mobile_number }}</p>

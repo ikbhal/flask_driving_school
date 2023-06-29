@@ -1,7 +1,5 @@
 from flask import Blueprint, request, render_template, redirect, url_for, flash
 
-from managers.driving_appointment_manager import DrivingAppointmentManager
-
 class_bp = Blueprint('class', __name__)
 
 @class_bp.route('/add_class/<student_id>', methods=['POST', 'GET'])
@@ -24,11 +22,11 @@ def add_class(student_id):
         class_manager = ClassManager(mongo_client)
         
         # Add the class appointment
-        class_manager.add_class(student_mobile_number, date, start_time, end_time)
+        class_manager.add_class(student_id, date, start_time, end_time)
 
         flash('Class added successfully.')
         return redirect(url_for('class.list_classes', 
-                                student_mobile_number=student_mobile_number))
+                                student_id=student_id))
     else:
         return render_template('classes/add.html', student_id=student._id)
 
