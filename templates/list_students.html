@@ -13,6 +13,8 @@
                 <th>Amount Paid</th>
                 <th>Settle Amount</th>
                 <th>Course</th>
+                <th>Training Days</th>
+                <th>Notes</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -28,6 +30,8 @@
                     <td>{{ student.amount_paid }}</td>
                     <td>{{ student.settle_amount }}</td>
                     <td>{{ student.course }}</td>
+                    <td>{{ student.training_days }}</td>
+                    <td>{{ student.notes }}</td>
                     <td>
                         <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
                     </td>

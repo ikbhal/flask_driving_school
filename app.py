@@ -3,7 +3,12 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 class Student:
-    def __init__(self, name, mobile_number, joining_date, application_number, amount, discount, amount_paid, settle_amount, course):
+    def __init__(self, name, mobile_number, joining_date,
+                  application_number,
+                    amount, discount, amount_paid, settle_amount, 
+                    course,
+                    training_days=10, notes=''
+                    ):
         self.name = name
         self.mobile_number = mobile_number
         self.joining_date = joining_date
@@ -13,6 +18,8 @@ class Student:
         self.amount_paid = amount_paid
         self.settle_amount = settle_amount
         self.course = course
+        self.training_days = training_days
+        self.notes = notes
 
 app = Flask(__name__)
 app.secret_key = 'allah raji hojaye'
@@ -53,7 +60,9 @@ def add_student():
             'discount': student.discount,
             'amount_paid': student.amount_paid,
             'settle_amount': student.settle_amount,
-            'course': student.course
+            'course': student.course,
+            'training_days': student.training_days,
+            'notes': student.notes
         })
 
         flash('Student Added Successfully')
