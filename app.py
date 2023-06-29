@@ -48,8 +48,15 @@ def add_student():
         amount_paid = request.form['amount_paid']
         settle_amount = request.form['settle_amount']
         course = request.form['course']
+        training_days = request.form['training_days']
+        notes = request.form['notes']
 
-        student = Student(name, mobile_number, joining_date, application_number, amount, discount, amount_paid, settle_amount, course)
+
+        student = Student(name, mobile_number, joining_date,
+                           application_number,
+                            amount, discount, amount_paid, settle_amount, 
+                            course,
+                            training_days, notes)
         
         student_collection.insert_one({
             'name': student.name,
@@ -69,6 +76,55 @@ def add_student():
         return redirect(url_for('index'))
     else:
         return render_template('add_student.html')
+    
+# create a route for viewing student
+@app.route('/view_student/<student_id>')
+def view_student(student_id):
+    student = student_collection.find_one({'_id': ObjectId(student_id)})
+    return render_template('view_student.html', student=student)
+
+# create route for editing student
+@app.route('/edit_student/<student_id>', methods=['POST', 'GET'])
+def edit_student(student_id):
+    if request.method == 'POST':
+        #edit handling
+        # fetch student from db given id
+        student = student_collection.find_one({'_id': ObjectId(student_id)})
+
+        # retrieve fields from form request , update the in the matched student
+        name = request.form['name']
+        mobile_number = request.form['mobile_number']
+        joining_date = request.form['joining_date']
+        application_number = request.form['application_number']
+        amount = request.form['amount']
+        discount = request.form['discount']
+        amount_paid = request.form['amount_paid']
+        settle_amount = request.form['settle_amount']
+        course = request.form['course']
+        training_days = request.form['training_days']
+        notes = request.form['notes']
+
+        # update in student object
+        student.name = name
+        student.mobile_number = mobile_number
+        student.joining_date = joining_date
+        student.application_number = application_number
+        student.amount = amount
+        student.discount = discount
+        student.amount_paid = amount_paid
+        student.settle_amount = settle_amount
+        student.course = course
+        student.training_days = training_days
+        student.notes = notes
+
+        # save studenet back to db
+        student_collection.save(student)
+        flash('Student Updated Successfully')
+
+    else:
+        student = student_collection.find_one({'_id': ObjectId(student_id)})
+        return render_template('edit_student.html', student=student)
+    
 
 @app.route('/delete_student/<student_id>')
 def delete_student(student_id):

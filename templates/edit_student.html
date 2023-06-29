@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Edit Student</h1>
+        <form method="POST" action="/edit_student/{{ student._id }}" class="mt-4">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" class="form-control" value="{{ student.name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile_number">Mobile Number:</label>
+                <input type="text" name="mobile_number" id="mobile_number" class="form-control" value="{{ student.mobile_number }}" required>
+            </div>
+            <div class="form-group">
+                <label for="joining_date">Joining Date:</label>
+                <input type="date" name="joining_date" id="joining_date" class="form-control" value="{{ student.joining_date }}" required>
+            </div>
+            <div class="form-group">
+                <label for="application_number">Application Number:</label>
+                <input type="text" name="application_number" id="application_number" class="form-control" value="{{ student.application_number }}" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="text" name="amount" id="amount" class="form-control" value="{{ student.amount }}" required>
+            </div>
+            <div class="form-group">
+                <label for="discount">Discount:</label>
+                <input type="text" name="discount" id="discount" class="form-control" value="{{ student.discount }}" required>
+            </div>
+            <div class="form-group">
+                <label for="amount_paid">Amount Paid:</label>
+                <input type="text" name="amount_paid" id="amount_paid" class="form-control" value="{{ student.amount_paid }}" required>
+            </div>
+            <div class="form-group">
+                <label for="settle_amount">Settle Amount:</label>
+                <input type="text" name="settle_amount" id="settle_amount" class="form-control" value="{{ student.settle_amount }}" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="text" name="course" id="course" class="form-control" value="{{ student.course }}" required>
+            </div>
+            <div class="form-group">
+                <label for="training_days">Training Days:</label>
+                <input type="text" name="training_days" id="training_days" class="form-control" value="{{ student.training_days }}" required>
+            </div>
+            <div class="form-group">
+                <label for="notes">Notes:</label>
+                <textarea name="notes" id="notes" class="form-control" required>{{ student.notes }}</textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+{% endblock %}

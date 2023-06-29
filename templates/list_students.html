@@ -7,14 +7,14 @@
                 <th>Name</th>
                 <th>Mobile Number</th>
                 <th>Joining Date</th>
-                <th>Application Number</th>
-                <th>Amount</th>
+                <!-- <th>Application Number</th> -->
+                <!-- <th>Amount</th>
                 <th>Discount</th>
                 <th>Amount Paid</th>
                 <th>Settle Amount</th>
                 <th>Course</th>
                 <th>Training Days</th>
-                <th>Notes</th>
+                <th>Notes</th> -->
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,15 +24,19 @@
                     <td>{{ student.name }}</td>
                     <td>{{ student.mobile_number }}</td>
                     <td>{{ student.joining_date }}</td>
-                    <td>{{ student.application_number }}</td>
+                    <!-- <td>{{ student.application_number }}</td>
                     <td>{{ student.amount }}</td>
                     <td>{{ student.discount }}</td>
                     <td>{{ student.amount_paid }}</td>
                     <td>{{ student.settle_amount }}</td>
                     <td>{{ student.course }}</td>
                     <td>{{ student.training_days }}</td>
-                    <td>{{ student.notes }}</td>
+                    <td>{{ student.notes }}</td> -->
                     <td>
+                        <a href="/view_student/{{ student._id }}" class="btn btn-danger">View</a>
+                    
+                        <a href="/edit_student/{{ student._id }}" class="btn btn-danger">Edit</a>
+                    
                         <a href="/delete_student/{{ student._id }}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
