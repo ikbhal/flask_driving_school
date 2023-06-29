@@ -28,7 +28,7 @@ def add_class(student_id):
         return redirect(url_for('class.list_classes', 
                                 student_id=student_id))
     else:
-        return render_template('classes/add.html', student_id=student._id)
+        return render_template('classes/add.html', student_id=student['_id'])
 
 @class_bp.route('/students/<student_id>/list_class')
 def list_classes(student_id):
