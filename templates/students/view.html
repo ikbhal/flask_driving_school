@@ -13,9 +13,9 @@
             <hr/>
             <h5>Student classes</h5>
             <!-- create button called add class which should call /add_class -->
-            <a href="/add_class/{{ student.mobile_number }}" class="btn btn-primary">Add Class</a>
+            <a href="/add_class/{{ student._id }}" class="btn btn-primary">Add Class</a>
             <!-- create button called list clases which will take to list_clases/ student mobile nubmer route-->
-            <a href="{{url_for('class.list_classes', student_mobile_number= student.mobile_number)}}" 
+            <a href="{{url_for('class.list_classes', student_id= student._id)}}" 
                 class="btn btn-primary">List Classes
             </a>
             <hr/>

@@ -5,9 +5,9 @@ class ClassManager:
     def __init__(self, mongo_client):
         self.mongo_client = mongo_client
 
-    def add_class(self, student_mobile_number, date, start_time, end_time):
+    def add_class(self, student_id, date, start_time, end_time):
         class_doc = {
-            'student_mobile_number': student_mobile_number,
+            'student_id': student_id,
             'date': date,
             'start_time': start_time,
             'end_time': end_time
@@ -18,6 +18,6 @@ class ClassManager:
     def delete_class(self, class_id):
         self.mongo_client.db.classes.delete_one({'_id': ObjectId(class_id)})
 
-    def list_clasess(self, student_mobile_number):
-        classes = self.mongo_client.db.classes.find({'student_mobile_number': student_mobile_number})
+    def list_clasess(self, student_id):
+        classes = self.mongo_client.db.classes.find({'student_id': student_id})
         return list(classes)

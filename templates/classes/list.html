@@ -6,8 +6,9 @@ Class List
 
 {% block content %}
     <h4>Class List</h4>
-    <h5>Student Mobile Number: {{ student_mobile_number }}</h5>
-    <a href="/students/view/mobile_number/{{ student_mobile_number }}" class="btn btn-danger">View Student</a>
+    <h5>Student  Name: {{student.name}}</h5>
+    <p>Mobile Number: {{ student.mobile_number }}</p>
+    <a href="/view/{{ student._id }}" class="btn btn-danger">View Student</a>
     
     <table class="table table-striped">
         <thead>
@@ -26,7 +27,7 @@ Class List
                         <!-- create delete butotn , call delete class api -->
 <!-- #<a href="/delete_class/{{ class_obj._id }}" class="btn btn-danger">Delete</a> -->
 
-                        <a href="/students/{{student_mobile_number}}/delete_class/{{ class_obj._id }}" 
+                        <a href="/students/{{student._id}}/delete_class/{{ class_obj._id }}" 
                             class="btn btn-danger">Delete Class</a>
                     </td>
                 </tr>

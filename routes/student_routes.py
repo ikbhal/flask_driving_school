@@ -63,11 +63,11 @@ def view_student(student_id):
     student = student_collection.find_one({'_id': ObjectId(student_id)})
     return render_template('students/view.html', student=student)
 
-@students_bp.route('/view/mobile_number/<student_mobile_number>', methods=['GET'])
-def view_student_by_mobile_number(student_mobile_number):
-    from app import student_collection
-    student = student_collection.find_one({'mobile_number': student_mobile_number})
-    return render_template('students/view.html', student=student)
+# @students_bp.route('/view/mobile_number/<student_mobile_number>', methods=['GET'])
+# def view_student_by_mobile_number(student_mobile_number):
+#     from app import student_collection
+#     student = student_collection.find_one({'mobile_number': student_mobile_number})
+#     return render_template('students/view.html', student=student)
 
 # create route for editing student
 @students_bp.route('/edit/<student_id>', methods=['POST', 'GET'])
