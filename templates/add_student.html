@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% block title %}
@@ -7,17 +6,49 @@ Add Student
 
 {% block content %}
 <h1>Add student</h1>
-<!-- form for add student  -->
-<!-- rewrite form with bootstrap-->
+<!-- form for add student -->
 <form action="/add_student" method="POST">
     <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" name="name">
+        <input type="text" name="name" class="form-control">
     </div>
     <div class="form-group">
         <label for="mobile_number">Mobile Number:</label>
-        <input type="text" name="mobile_number">
+        <input type="text" name="mobile_number" class="form-control">
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+        <label for="joining_date">Joining Date:</label>
+        <input type="date" name="joining_date" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="application_number">Application Number:</label>
+        <input type="text" name="application_number" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="text" name="amount" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="discount">Discount:</label>
+        <input type="text" name="discount" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="amount_paid">Amount Paid:</label>
+        <input type="text" name="amount_paid" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="settle_amount">Settle Amount:</label>
+        <input type="text" name="settle_amount" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="course">Course:</label>
+        <select name="course" class="form-control">
+            <option value="lmv">LMV</option>
+            <option value="mvwog">MVWOG</option>
+            <option value="mvg">MVG</option>
+            <option value="lvm">LVM with Two Wheeler</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 {% endblock %}

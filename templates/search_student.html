@@ -18,10 +18,17 @@
                 <p>Student ID: {{ student.student_id }}</p>
                 <p>Name: {{ student.name }}</p>
                 <p>Mobile Number: {{ student.mobile_number }}</p>
+                <p>Joining Date: {{ student.joining_date }}</p>
+                <p>Application Number: {{ student.application_number }}</p>
+                <p>Amount: {{ student.amount }}</p>
+                <p>Discount: {{ student.discount }}</p>
+                <p>Amount Paid: {{ student.amount_paid }}</p>
+                <p>Settle Amount: {{ student.settle_amount }}</p>
+                <p>Course: {{ student.course }}</p>
             </div>
-        {% else: %}
+        {% else %}
             <div class="mt-4">
-                <p>Student not found by mobile number </p>
+                <p>Student not found by mobile number</p>
             </div>
         {% endif %}
     </div>
