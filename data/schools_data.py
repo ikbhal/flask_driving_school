@@ -1,0 +1,1 @@
+print('schools data')

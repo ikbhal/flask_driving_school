@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+
+        {% include 'schools/add.html' %}
+
+        {% if school_list %}
+            <h2 class="mt-4">Schools in {{city}}</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Adress</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for school in school_list %}
+                        <tr>
+                            <td>{{school.name}}</td>
+                            <td>
+                                    <p>{{school.address}} </p>z
+                                    <p>{{school.area}}</p>
+                                    <p>{{school.city}}</p>
+                                    <p>{{school.pincode}}</p>
+                                    <p>{{school.phone_number}}</p>
+                            </td>
+                            <td>
+                                <a href="{{url_for("schools.edit", school_id=school['_id'])}}" class="btn btn-primary">Edit</a>
+                                <a href="{{url_for("schools.delete", school_id=school['_id'])}}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

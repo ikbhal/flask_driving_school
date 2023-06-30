@@ -16,9 +16,11 @@
                     <a class="navbar-brand" href="/">DSkool</a>
                   </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="/students/add">Add Student</a></li>
-                    <li><a href="/students/list">List Students</a></li>
-                    <li><a href="/students/search">Search Student</a></li>
+                    <li><a href="{{url_for("students.add_student")}}">Add Student</a></li>
+                    <li><a href="{{url_for("students.list_students")}}">List Students</a></li>
+                    <li><a href="{{url_for('students.search_student')}}">Search Student</a></li>
+                    <li><a href="{{url_for('schools.list')}}">Driver School List</a></li>
+                    <li><a href="{{url_for('schools.search')}}">Driver School Search</a></li>
 
                     <!-- <li><a href="/photos/upload_photo/{{student_id}}">Upload Photo</a></li> -->
                     <!-- <li><a href="/add_class">Add Class</a></li> -->

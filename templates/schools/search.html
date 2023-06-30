@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+
+        {% include 'schools/add.html' %}
+
+        <!-- end of adding scholl form-->
+        <h1>Search Schools</h1>
+        <form method="POST" action="{{url_for("schools.search", city=city)}}" class="mt-4">
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        
+        {% if city and  not school_list %}
+            <p> No school found</p>
+        {% elif school_list %}
+            <h2 class="mt-4">Schools in {{city}}</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Adress</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for school in school_list %}
+                        <tr>
+                            <!-- <td><a href="{{url_for("schools.detail", id=school.id)}}">{{school.name}}</a></td> -->
+                            <td>{{school.name}}</td>
+                            <td>{{school.address}}</td>
+                            <td>{{school.phone}}</td>
+                            <td>
+                                <a href="{{url_for("schools.edit", school_id=school['_id'])}}" class="btn btn-primary">Edit</a>
+                                <a href="{{url_for("schools.delete", school_id=school['_id'])}}" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1>Edit School</h1>
+        <form method="POST" action="{{url_for('schools.edit', school_id=school['_id'])}}" class="mt-4">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ school['name'] }}" required><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" value="{{ school['address'] }}" required><br>
+
+            <label for="area">Area Name:</label>
+            <input type="text" id="area" name="area" value="{{ school['area'] }}" required><br>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" value="{{ school['city'] }}" required><br>
+
+            <label for="pincode">Pincode:</label>
+            <input type="text" id="pincode" name="pincode" value="{{ school['pincode'] }}" required><br>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" value="{{ school['phone_number'] }}" required><br>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+{% endblock %}
