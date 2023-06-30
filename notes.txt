@@ -1,0 +1,10 @@
+https://firebase.google.com/pricing?hl=en&authuser=0
+
+---
+Cloud Storage
+help 
+GB stored 5 GB $0.026/GB
+GB downloaded 1 GB/day $0.12/GB
+Upload operations 20K/day $0.05/10k
+Download operations 50K/day $0.004/10k
+Multiple buckets per project

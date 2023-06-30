@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h4>FBS file upload , check at firebase storage  go from firebase console</h4>
+  <form action="{{url_for('fbs_photos.upload_photo')}}" method="post" enctype="multipart/form-data">
+    <input type="file" name="photo" accept="image/*">
+    <button type="submit">Upload</button>
+  </form>
+{% endblock %}

@@ -4,6 +4,7 @@ from routes.student_routes import students_bp
 from routes.class_routes import class_bp
 from routes.photo_routes import photo_bp
 from routes.school_routes import school_bp
+from routes.firebase_storage_photo_routes import fbs_photo_bp
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
@@ -16,6 +17,7 @@ app.register_blueprint(students_bp)
 app.register_blueprint(class_bp)
 app.register_blueprint(photo_bp)
 app.register_blueprint(school_bp)
+app.register_blueprint(fbs_photo_bp)
 
 @app.route('/')
 def index():

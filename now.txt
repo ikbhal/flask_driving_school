@@ -1,0 +1,6 @@
+branch purpose now:
+
+upload photo firebase storage as publicly accessible via python flask ;
+access firebase storage photo via route given photo id or url
+how to view photos in firebase storage online
+how to create service account or app credentials to use firebase storage
